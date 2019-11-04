@@ -7,10 +7,10 @@ var PORT = process.env.PORT || 8080;
 
 
 // create application/json parser
-var jsonParser = bodyParser.json()
+// var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+app.usebodyParser.urlencoded({ extended: true });
 
 app.use(bodyParser.json({ type: 'application/*+json' }))
 
@@ -28,3 +28,4 @@ app.listen(PORT, function () {
   console.log("App connected PORT:" + PORT);
 });
 
+ 

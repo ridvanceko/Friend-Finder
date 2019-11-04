@@ -34,7 +34,7 @@ var friends = [{
 },
 {
   name: "Bran Stark",
-  photo: "https://gameofthrones.fandom.com/wiki/Jon_Snow",
+  photo: "https://gameofthrones.fandom.com/wiki/Bran_Stark",
   scores: [
     "4",
     "3",
@@ -51,7 +51,7 @@ var friends = [{
 },
 {
   name: "Cersei Lannister",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://en.wikipedia.org/wiki/Cersei_Lannister",
   scores: [
     "4",
     "3",
@@ -68,7 +68,7 @@ var friends = [{
 },
 {
   name: "Jaime Lannister",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://gameofthrones.fandom.com/wiki/Jaime_Lannister",
   scores: [
     "4",
     "3",
@@ -85,7 +85,7 @@ var friends = [{
 },
 {
   name: "Joffrey",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://gameofthrones.fandom.com/wiki/Joffrey_Baratheon",
   scores: [
     "4",
     "3",
@@ -102,7 +102,7 @@ var friends = [{
 },
 {
   name: "Jon Snow",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://en.wikipedia.org/wiki/Jon_Snow_(character)",
   scores: [
     "4",
     "3",
@@ -119,7 +119,7 @@ var friends = [{
 },
 {
   name: "Khal Drogo",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://gameofthrones.fandom.com/wiki/Drogo",
   scores: [
     "4",
     "3",
@@ -136,7 +136,7 @@ var friends = [{
 },
 {
   name: "Sansa Stark",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://gameofthrones.fandom.com/wiki/Sansa_Stark",
   scores: [
     "4",
     "3",
@@ -153,7 +153,7 @@ var friends = [{
 },
 {
   name: "Tyrion Lannister",
-  photo: "https://gameofthrones.fandom.com/wiki/Arya_Stark",
+  photo: "https://gameofthrones.fandom.com/wiki/Tyrion_Lannister",
   scores: [
     "4",
     "3",

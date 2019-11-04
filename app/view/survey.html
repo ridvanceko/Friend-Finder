@@ -20,7 +20,7 @@
     <input type="text" name="" id="name" class="filled-form" required>
 
     <h4>Photo Image(required)</h4>
-    <input type="text" name="" id="photo" class="filled-form" required>
+    <input type="img" name="" id="photo" class="filled-form" required>
     <hr>
 
     <h3>-Questions 1-</h3>
@@ -147,10 +147,107 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Submit Survey</a>
 
   </div>
+  <hr>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Your Soul Mate</h4>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matching" src="" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    // //selected css
+    // var config = {
+    //   ".chosen-select": {},
+    //   ".chosen-select-deselect": { allowSingleDeselect: true },
+    //   ".chosen-select-no-single": { disableSearch: 10 },
+    //   ".chosen-select-no-results": { noResultsText: "No result founded!" },
+    //   ".chosen-select-witdh": { width: "90%" }
+    // };
+
+    // for (var selector in config) {
+    //   $(selectore).chosen(config[selector]);
+    // }
+
+    $("#submit").on("click", function () {
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        $(".chosen-select").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+
+        return isValid;
+
+      }
+
+      if (validateForm()) {
+        var userData = {
+          name: $("#name").val(),
+          photo: $("#photo").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val(),
+          ]
+        };
+
+        var currentURL = window.location.origin;
+        $.post(currentURL + "/api/friends", userData, function (data) {
+
+          // //Take the result from ajax and find best match
+          $("#matchName").text(data.name);
+          $("#matching").attr("src", data.photo);
+          // //Use bootsrap modal
+          $("#resultsModal").modal("toogle"); 
+
+          // alert("works");
+
+        });
+      }
+      else {
+        alert("Fill out informations")
+      }
+      return false;
+    });
 
 
 
 
+
+  </script>
 
 </body>
 
