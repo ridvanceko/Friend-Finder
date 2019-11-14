@@ -3,11 +3,16 @@
 
 <head>
   <title>Friend Finder</title>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+
+
 </head>
 
 
@@ -20,8 +25,8 @@
       <div class="input-group-prepend">
         <span class="input-group-text">First and Last name</span>
       </div>
-      <input type="text" id="name" aria-label="First name" class="filled-form">
-      <input type="text" aria-label="Last name" class="filled-form">
+      <input type="text" id="name" aria-label="First-name" class="filled-form">
+
     </div> <br>
     <!-- <h3>About You</h3>
     <h4>Name (required)</h4>
@@ -162,7 +167,7 @@
     </select>
     <br>
     <br>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Submit Survey</a>
+    <button id="submit">Submit Survey</button>
 
   </div>
   <hr>
@@ -205,7 +210,9 @@
     //   $(selectore).chosen(config[selector]);
     // }
 
-    $("#submit").on("click", function () {
+    $("#submit").on("click", function (event) {
+
+      event.preventDefault();
       function validateForm() {
         var isValid = true;
         $(".form-control").each(function () {
@@ -242,9 +249,15 @@
           ]
         };
 
-        var currentURL = window.location.origin;
-        $.post(currentURL + "/api/friends", userData, function (data) {
+//         $("button").click(function(){
+//   $.ajax({url: "demo_test.txt", success: function(result){
+//     $("#div1").html(result);
+//   }});
+// });
 
+        // var currentURL = window.location.origin;
+        $.ajax({url:"/api/friends", success: function (data) {
+          console.log(data)
           // //Take the result from ajax and find best match
           $("#matchName").text(data.name);
           $("#matching").attr("src", data.photo);
@@ -253,7 +266,7 @@
 
           // alert("works");
 
-        });
+        }});
       }
       else {
         alert("Fill out informations")
@@ -270,9 +283,15 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </body>
 
 

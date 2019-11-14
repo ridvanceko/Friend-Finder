@@ -18,7 +18,7 @@ module.exports = function (app) {
 
     console.log(request.body);
 
-    var userData = request.bod;
+    var userData = request.body;
     var userScores = userData.scores;
     console.log(userScores);
 
