@@ -1,3 +1,10 @@
 body {
   background-image: url("../view/images/friendfinder.jpg");;
 }
+
+
+.photo{
+  
+width: 300px;
+height: 300px;
+}
